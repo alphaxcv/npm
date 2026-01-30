@@ -1,0 +1,25 @@
+{
+  "name": "@jfux/kows",
+  "version": "1.0.0",
+  "description": "My websocket project",
+  "main": "index.js",
+  "private": false,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alphaxcv/npm.git"
+  },
+  "keywords": [
+    "websocket"
+  ],
+  "author": "jfux",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^8.13.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
