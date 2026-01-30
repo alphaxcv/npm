@@ -18,5 +18,5 @@ const CONFIG = {
 运行：
 ```
 npm install @jfux/kows
-npx kows --port  --ks  --kk  --ct  --d
+npx kows --port  --ks  --kk  --ct  --cd
 ```
