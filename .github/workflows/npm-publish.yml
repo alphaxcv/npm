@@ -1,0 +1,32 @@
+name: Node.js Package Publish
+
+# 触发条件：当你我们在 GitHub 上创建一个新的 Release 时触发
+# 这是最安全的做法，防止每次 push 代码都尝试发布（导致版本号冲突报错）
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. 拉取代码
+      - uses: actions/checkout@v4
+
+      # 2. 设置 Node.js 环境
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.x' # 建议使用 LTS 版本
+          registry-url: 'https://registry.npmjs.org' # 指定官方源
+
+      # 3. 安装依赖 (使用 npm ci 比 npm install 更稳定)
+      - run: npm ci
+
+      # 4. (可选) 运行测试，如果测试不过，就不会发布
+      # - run: npm test
+
+      # 5. 发布到 npm
+      - run: npm publish
+        env:
+          # 这里引用我们在 GitHub 设置里配好的 Secret
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
