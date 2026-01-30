@@ -1,7 +1,7 @@
 # npm
 
 ```
-UUID: (process.env.UUID || 'feefeb96-bfcf-4a9b-aac0-6aac771c1b98').replace(/-/g, ""),
+UUID: (process.env.UUID || '').replace(/-/g, ""),
 PORT: process.env.PORT || 7860,
 K_S: process.env.K_S || '', // koamair sever domain
 C_B: process.env.C_B || 'www.shopify.com', //cf best domain
