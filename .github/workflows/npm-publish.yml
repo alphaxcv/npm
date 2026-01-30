@@ -1,41 +1,30 @@
 name: Publish Package to npm
 
-# 触发机制：当你在 GitHub 页面点击 "Create a new release" 时触发
 on:
   release:
     types: [created]
 
-# 权限配置：新版 npm 发布需要的安全设置
 permissions:
-  contents: read      # 读取代码
-  id-token: write     # 关键：用于生成 npm Provenance (来源证明)，不用 classic token 必须加这个
+  contents: read
+  id-token: write
 
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     steps:
-      # 1. 检出代码
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2. 设置 Node.js 环境
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.x'            # 使用稳定的 Node 版本
-          registry-url: 'https://registry.npmjs.org' #以此注册表身份登录
+          node-version: '20.x'
+          registry-url: 'https://registry.npmjs.org'
 
-      # 3. 安装依赖 (使用 ci 也就是 Clean Install，速度更快更安全)
       - name: Install dependencies
         run: npm install
 
-      # 4. (可选) 如果你的项目需要构建（比如 TypeScript 转 JS），请取消下面这行的注释
-      # - name: Build
-      #   run: npm run build
-
-      # 5. 正式发布
       - name: Publish to npm
         run: npm publish --provenance --access public
         env:
-          # 必须在 GitHub 仓库 Settings -> Secrets -> Actions 里配置好 NPM_TOKEN
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
