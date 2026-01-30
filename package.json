@@ -1,6 +1,6 @@
 {
   "name": "@jfux/kows",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "A tool",
   "main": "index.js",
   "bin": {
