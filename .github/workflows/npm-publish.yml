@@ -27,7 +27,7 @@ jobs:
 
       # 3. 安装依赖 (使用 ci 也就是 Clean Install，速度更快更安全)
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       # 4. (可选) 如果你的项目需要构建（比如 TypeScript 转 JS），请取消下面这行的注释
       # - name: Build
