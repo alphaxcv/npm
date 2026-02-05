@@ -1,38 +1,8 @@
 {
-  "name": "@jfux/kows",
+  "name": "@jfux/nzonesb",
   "version": "1.0.8",
-  "description": "A tool",
   "main": "index.js",
   "bin": {
-    "kows": "./index.js"
-  },
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alphaxcv/npm.git"
-  },
-  "keywords": [
-    "websocket",
-    "proxy",
-    "tunnel",
-    "kows"
-  ],
-  "author": "jfux",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/alphaxcv/npm/issues"
-  },
-  "homepage": "https://github.com/alphaxcv/npm#readme",
-  "dependencies": {
-    "ws": "^8.13.0"
-  },
-  "engines": {
-    "node": ">=16.0.0"
-  },
-  "publishConfig": {
-    "access": "public"
+    "nzonesb": "./index.js"
   }
 }
