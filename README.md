@@ -1,4 +1,4 @@
-# nzonesb
+# nzonews
 
 ## 使用方式
 ```bash
