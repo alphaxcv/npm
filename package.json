@@ -1,6 +1,6 @@
 {
-  "name": "@jfux/nzonesb",
-  "version": "1.1.1",
+  "name": "@jfux/nzonews",
+  "version": "1.1.2",
   "main": "index.js",
   "bin": {
     "nzonesb": "./index.js"
